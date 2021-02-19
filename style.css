@@ -1,0 +1,227 @@
+/*----------------- AFFICHAGE GLOBAL ---------------------*/
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mobile{
+    display: none;
+}
+#icone2{
+    display: none;
+}
+
+#container{
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.img-resize{
+    width: 100%;
+}
+
+body{
+    font-size: 15px;
+    margin: 0;
+}
+
+.disp-flex{
+    display: flex;
+}
+
+.justifier{
+    text-align: justify;
+}
+/*--------------------------------------------------------*/
+
+/*----------------- HEADER -------------------------------*/
+    /* NAV + LOGO*/
+body div header section{
+    display: flex;
+}
+body div header section nav{
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+}
+body div header nav a{
+    text-decoration-line: none;
+    font-weight: bold;
+    color: black;
+    margin: 0 2em 1em;
+    text-align: center;
+}
+
+    /* BANNIERE */
+body div header figure{
+    margin: 0 0 1em;
+}
+body div header figure div{
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+body div header figure div img{
+    width: 100%;
+}
+body div header figure div figcaption{
+    position: absolute;
+    bottom: 0;
+    background-color: #1a630771;
+    color: white;
+    width: 100%;
+    display: flex;
+}
+body div header figure div figcaption p{
+    flex: 9;
+    margin-left: 0.5em; 
+}
+body div header figure div figcaption a{
+    flex: 1;
+}
+/*--------------------------------------------------------*/
+
+/*----------------- MAIN ---------------------------------*/
+body div main{
+    margin-top: 1.25em;
+    border-bottom: solid #6aa821;
+}
+    /* ARTICLE */
+body div main article{
+    flex: 2;
+    padding: 0 0.5em;
+}
+body div main aside{
+    flex: 1;
+    background-color: #6aa821;
+    color: white;
+    text-align: center;
+}
+#icone{
+    float: left;
+    min-width: 1.25em;
+    min-height: 1.25em;
+    max-width: 1.25em;
+    max-height: 1.25em;
+    margin-right: 0.5em;
+}
+h1{
+    margin-top: 1em;
+}
+
+    /* ASIDE */
+body div main aside figure{
+    width: 146px;
+    height: 114px;
+    margin: 0 auto;
+}
+body div main aside p{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+body div main aside nav{
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+/*--------------------------------------------------------*/
+
+/*----------------- FOOTER -------------------------------*/
+#greentri{
+    width: 2em;
+    height: 2em;
+    margin: 0 auto;
+    transform: translate(0, -0.25em);
+}
+footer div section{
+    flex: 1;
+    margin: 1em;
+}
+
+    /* NEWSLETTER */
+footer div form input{
+    margin-bottom: 0.5em;
+}
+
+    /* GALERIES + PARTENAIRES */
+footer div section nav{
+    flex-wrap: wrap;
+}
+footer div section nav a{
+    margin: 0.25em;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+}
+footer div section nav a img{
+    height: 100%;
+}
+/*--------------------------------------------------------*/
+
+
+
+/*----------------- MOBILE ------------------------------*/
+@media screen and (max-width: 753px) {
+    h1{
+        text-align: center;
+        
+    }
+    #icone2{
+        display:block;
+        min-width: 2em;
+        min-height: 2em;
+        max-width: 2em;
+        max-height: 2em;
+        margin: auto;
+    }
+    div[id="icone"]{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 644px) {
+    .mobile{
+        display:block;
+    }
+    body div header section{
+        display:none;
+    }
+
+        /* BURGER */
+    #burger{
+        position: absolute;
+        color: white;
+        padding: 1em;
+        z-index:1;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    body div header figure div img{
+        width: auto;
+        height: 300px;
+        position:absolute;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer div[class="disp-flex"]{
+        display: block;
+    }
+    footer div section{
+        padding: 0em 1em 1em;
+        margin: 0em 0 1em;
+    }
+}
+
+@media screen and (max-width: 452px) {
+    .disp-block{
+        display: block;
+    }
+}
+/*--------------------------------------------------------*/
