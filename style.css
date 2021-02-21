@@ -37,9 +37,9 @@ body{
 .padleft{
     padding-left: 1em;
 }
-body[class="isDark"] header{
+/*body[class="isDark"] header{
     height: 467.5px;
-}
+}*/
 /*--------------------------------------------------------*/
 
 /*----------------- HEADER -------------------------------*/
