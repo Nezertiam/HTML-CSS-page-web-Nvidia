@@ -16,7 +16,8 @@
             <header>
                 <span id="burger" class="fas fa-bars fa-2x mobile"></span>
                 <section>
-                    <a href=""><img class="img-resize" src="ressources/img/logo.jpg" alt="logo Nvidia"></a>
+                    <a href=""><div class="logo"><img class="img-resize white" src="ressources/img/logo.png" alt="logo Nvidia"></div></a>
+                    <a href=""><div class="logo logopadtop"><img class="img-resize night" src="ressources/img/logo-night.png" alt="logo Nvidia"></div></a>
                     <nav>
                         <a href="">PRODUITS</a>
                         <a href="">GAMME RTX</a>
@@ -35,6 +36,15 @@
                         </div>
                         
                 </figure>
+                <div class="disp-flex padleft">
+                    <label id="dark-switch">
+                        <input  id="dark-mode" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <p id=nuit>
+                        Affichage nuit
+                    </p>
+                </div>
             </header>
             <main class="disp-flex disp-block">
                 <article>
@@ -81,11 +91,11 @@
                         wurscht Pfourtz ! <br><br>Jetzt geht's los !
                     </p>
                     <nav>
-                        <a href="">FB</a><!--faceboook-->
-                        <a href="">T</a><!--twitter-->
-                        <a href="">IG</a><!--instagram-->
-                        <a href="">SN</a><!--snapchat-->
-                        <a href="">LI</a><!--glingling-->
+                        <a href="" class="fab fa-facebook-f"></a><!--faceboook-->
+                        <a href="" class="fab fa-twitter"></a><!--twitter-->
+                        <a href="" class="fab fa-instagram"></a><!--instagram-->
+                        <a href="" class="fab fa-snapchat"></a><!--snapchat-->
+                        <a href="" class="fab fa-linkedin-in"></a><!--glingling-->
                     </nav>
                 </aside>
             </main>
@@ -97,10 +107,10 @@
                     <section>
                         <h3>NEWSLETTER</h3>
                         <form>
-                            <input type="Nom">
+                            <input type="text" value="Nom">
                             <div>
-                                <input type="Email">
-                                <button>S'inscrire</button>
+                                <input type="email" value="Email">
+                                <input type="submit" value="S'inscrire"></input>
                             </div>
                         </form>
                     </section>
@@ -124,5 +134,9 @@
                 </div>
             </footer>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="app.js"></script>
+
     </body>
 </html>

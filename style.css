@@ -4,7 +4,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.mobile{
+.mobile, .night{
     display: none;
 }
 #icone2{
@@ -12,7 +12,7 @@
 }
 
 #container{
-    max-width: 1024px;
+    max-width: 1128px;
     margin: 0 auto;
     position: relative;
 }
@@ -33,12 +33,25 @@ body{
 .justifier{
     text-align: justify;
 }
+
+.padleft{
+    padding-left: 1em;
+}
+body[class="isDark"] header{
+    height: 467.5px;
+}
 /*--------------------------------------------------------*/
 
 /*----------------- HEADER -------------------------------*/
     /* NAV + LOGO*/
 body div header section{
     display: flex;
+}
+.logo{
+    height: 100px;
+}
+.logopadtop{
+    padding-top: 11px;
 }
 body div header section nav{
     margin: 0 auto;
@@ -81,6 +94,57 @@ body div header figure div figcaption p{
 }
 body div header figure div figcaption a{
     flex: 1;
+}
+
+    /* SWITCH DARK MODE */
+#dark-switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+#dark-switch input{   /*permet de cacher la checkbox par défaut */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+input:checked + .slider {
+    background-color: #6aa821;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+#nuit{
+    padding-left: 1em;
 }
 /*--------------------------------------------------------*/
 
@@ -128,6 +192,12 @@ body div main aside nav{
     padding-top: 2em;
     padding-bottom: 1em;
 }
+body div main aside nav a{
+    margin: 0 0.25em;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+}
 /*--------------------------------------------------------*/
 
 /*----------------- FOOTER -------------------------------*/
@@ -164,7 +234,7 @@ footer div section nav a img{
 
 
 
-/*----------------- MOBILE ------------------------------*/
+/*----------------- RESPONSIVE ---------------------------*/
 @media screen and (max-width: 753px) {
     h1{
         text-align: center;
@@ -223,5 +293,20 @@ footer div section nav a img{
     .disp-block{
         display: block;
     }
+}
+/*--------------------------------------------------------*/
+
+/*----------------- NIGHT MODE ---------------------------*/
+.isDark{
+    background-color: rgb(41, 41, 41);
+}
+body[class="isDark"] header nav a, body[class="isDark"] main, body[class="isDark"] header p{
+    color: white;
+}
+body[class="isDark"] .white{
+    display: none;
+}
+body[class="isDark"] .night{
+    display: block;
 }
 /*--------------------------------------------------------*/
