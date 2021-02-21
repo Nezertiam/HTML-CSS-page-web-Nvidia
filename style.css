@@ -26,8 +26,12 @@ body{
     margin: 0;
 }
 
+    /* raccourcis display */
 .disp-flex{
     display: flex;
+}
+.al-center{
+    align-items: center;
 }
 
 .justifier{
@@ -36,6 +40,18 @@ body{
 
 .padleft{
     padding-left: 1em;
+}
+.btn-vert{
+    background-color: #6aa821;
+    border-radius: 10px;
+    margin: 0.5em;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /*--------------------------------------------------------*/
 
@@ -91,6 +107,9 @@ body div header figure div figcaption p{
 }
 body div header figure div figcaption a{
     flex: 1;
+}
+span[class="fas fa-caret-right"]{
+    margin-left: 0.5em;
 }
 
     /* SWITCH DARK MODE */
