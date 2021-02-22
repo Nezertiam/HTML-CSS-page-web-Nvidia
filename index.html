@@ -12,29 +12,34 @@
     </head>
 
     <body>
-        <div id="container">
+        <div id="wrapper">
             <header>
                 <span id="burger" class="fas fa-bars fa-2x mobile"></span>
                 <section>
                     <a href=""><div class="logo"><img class="img-resize white" src="ressources/img/logo.png" alt="logo Nvidia"></div></a>
-                    <a href=""><div class="logo logopadtop"><img class="img-resize night" src="ressources/img/logo-night.png" alt="logo Nvidia"></div></a>
-                    <nav>
-                        <a href="">PRODUITS</a>
-                        <a href="">GAMME RTX</a>
-                        <a href="">SUPPORT & PILOTES</a>
-                        <a href="">CONTACT</a>
+                    <a href=""><div class="logo"><img class="img-resize night logopadtop" src="ressources/img/logo-night.png" alt="logo Nvidia"></div></a>
+                    <nav id="main-nav">
+                        <li><a href="">PRODUITS</a></li>
+                        <li><a href="">GAMME RTX</a></li>
+                        <li><a href="">SUPPORT & PILOTES</a></li>
+                        <li><a href="">CONTACT</a></li>
                     </nav>
                 </section>
                 
                 <figure>
                         <div>
-                            <img src="ressources/img/banner.jpg" alt="image RTX 2060">
+                            <img src="ressources/img/banner.jpg" alt="image RTX 2060" class="imgbanner">
+                            <div class="mobile">
+                                <div><img src="ressources/img/banner-night.png" alt="logo Nvidia" class="mobile"></div>
+                            </div>
                             <figcaption>
-                                <p>Plus d'informations sur la gamme GeForce RTX</p>
-                                <a href="" class="btn-vert"><span>Découvrir </span><span class="fas fa-caret-right"></span></a>
+                                <a href="" class="btn-vert float-right">
+                                    <span>Découvrir </span>
+                                    <span class="fas fa-caret-right"></span>
+                                </a>
+                                <span class="disp-flex">Plus d'informations sur la gamme GeForce RTX</span>
                             </figcaption>
                         </div>
-                        
                 </figure>
                 <div class="disp-flex padleft">
                     <label id="dark-switch">
@@ -46,6 +51,7 @@
                     </p>
                 </div>
             </header>
+
             <main class="disp-flex disp-block">
                 <article>
                     <div id="icone2"> 
@@ -94,7 +100,7 @@
                         <a href="" class="fab fa-facebook-f"></a><!--faceboook-->
                         <a href="" class="fab fa-twitter"></a><!--twitter-->
                         <a href="" class="fab fa-instagram"></a><!--instagram-->
-                        <a href="" class="fab fa-snapchat"></a><!--snapchat-->
+                        <a href="" class="fab fa-snapchat-ghost"></a><!--snapchat-->
                         <a href="" class="fab fa-linkedin-in"></a><!--glingling-->
                     </nav>
                 </aside>
@@ -110,22 +116,22 @@
                             <input type="text" value="Nom">
                             <div>
                                 <input type="email" value="Email">
-                                <input type="submit" value="S'inscrire"></input>
+                                <input type="submit" value="  S'inscrire  "></input>
                             </div>
                         </form>
                     </section>
                     <section>
                         <h3>GALERIE</h3>
-                        <nav class="disp-flex">
-                            <a href=""><img src="ressources/img/gal1.jpg" alt="logo Nvidia"></a>
-                            <a href=""><img src="ressources/img/gal2.jpg" alt="image RTX 1"></a>
-                            <a href=""><img src="ressources/img/gal3.jpg" alt="image RTX 2"></a>
-                            <a href=""><img src="ressources/img/gal4.jpg" alt="image RTX 3"></a>
+                        <nav class="disp-flex help">
+                            <a href=""><img class="footer-img" src="ressources/img/gal1.jpg" alt="logo Nvidia"></a>
+                            <a href=""><img class="footer-img"src="ressources/img/gal2.jpg" alt="image RTX 1"></a>
+                            <a href=""><img class="footer-img"src="ressources/img/gal3.jpg" alt="image RTX 2"></a>
+                            <a href=""><img class="footer-img"src="ressources/img/gal4.jpg" alt="image RTX 3"></a>
                         </nav>
                     </section>
                     <section>
                         <h3>PARTENAIRES</h3>
-                        <nav class="disp-flex">
+                        <nav class="disp-flex help2">
                             <a href=""><img src="ressources/img/intel.png" alt="logo Intel"></a>
                             <a href=""><img src="ressources/img/asus.png" alt="logo Asus"></a>
                             <a href=""><img src="ressources/img/EA.png" alt="logo Electronic Arts"></a>
@@ -135,7 +141,6 @@
             </footer>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="app.js"></script>
 
     </body>

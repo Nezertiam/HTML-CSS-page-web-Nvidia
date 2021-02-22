@@ -3,6 +3,9 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .mobile, .night{
     display: none;
@@ -11,7 +14,7 @@
     display: none;
 }
 
-#container{
+#wrapper{
     max-width: 1128px;
     margin: 0 auto;
     position: relative;
@@ -41,10 +44,17 @@ body{
 .padleft{
     padding-left: 1em;
 }
+
+.float-right{
+    float: right;
+}
+
 .btn-vert{
     background-color: #6aa821;
+    border : 1px solid #6aa821;
     border-radius: 10px;
     margin: 0.5em;
+    padding: 0.4em 0.5em;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -53,6 +63,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 /*--------------------------------------------------------*/
 
 /*----------------- HEADER -------------------------------*/
@@ -71,12 +82,17 @@ body div header section nav{
     display: flex;
     align-items: flex-end;
 }
+header nav li{
+    list-style: none;
+    text-align: center;
+    margin: 1em;
+}
 body div header nav a{
     text-decoration-line: none;
     font-weight: bold;
     color: black;
-    margin: 0 2em 1em;
     text-align: center;
+    margin: 1em;
 }
 
     /* BANNIERE */
@@ -99,14 +115,9 @@ body div header figure div figcaption{
     background-color: #1a630771;
     color: white;
     width: 100%;
-    display: flex;
 }
-body div header figure div figcaption p{
-    flex: 9;
-    margin-left: 0.5em; 
-}
-body div header figure div figcaption a{
-    flex: 1;
+body div header figure div figcaption span[class="disp-flex"]{
+    margin: 1em;
 }
 span[class="fas fa-caret-right"]{
     margin-left: 0.5em;
@@ -164,6 +175,7 @@ input:checked + .slider:before {
 }
 /*--------------------------------------------------------*/
 
+
 /*----------------- MAIN ---------------------------------*/
 body div main{
     margin-top: 1.25em;
@@ -172,7 +184,7 @@ body div main{
     /* ARTICLE */
 body div main article{
     flex: 2;
-    padding: 0 0.5em;
+    padding: 0 1em 0 0.5em;;
 }
 body div main aside{
     flex: 1;
@@ -214,6 +226,10 @@ body div main aside nav a{
     color: white;
     text-decoration: none;
 }
+h2{
+    margin: 0;
+    padding: 1em 0;
+}
 /*--------------------------------------------------------*/
 
 /*----------------- FOOTER -------------------------------*/
@@ -230,7 +246,13 @@ footer div section{
 
     /* NEWSLETTER */
 footer div form input{
-    margin-bottom: 0.5em;
+    margin: 0.25em 0;
+}
+footer input[type="submit"]{
+    background-color: #6aa821;
+    border: 1px solid #6aa821;
+    color: white;
+    height: 30px;
 }
 
     /* GALERIES + PARTENAIRES */
@@ -240,17 +262,29 @@ footer div section nav{
 footer div section nav a{
     margin: 0.25em;
     overflow: hidden;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
 }
 footer div section nav a img{
     height: 100%;
+}
+footer input{
+    height: 35px;
 }
 /*--------------------------------------------------------*/
 
 
 
 /*----------------- RESPONSIVE ---------------------------*/
+@media screen and (max-width: 820px) {
+    .disp-block{
+        display: block;
+    }
+    aside figure{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 753px) {
     h1{
         text-align: center;
@@ -273,29 +307,80 @@ footer div section nav a img{
     .mobile{
         display:block;
     }
-    body div header section{
-        display:none;
+    body div header section>a, header figcaption{
+        display: none;
+    }
+    header figure{
+        position: relative;
+    }
+    header div[class="mobile"]{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    header div[class="mobile"] div{
+        display: flex;
+        align-items: flex-end;
     }
 
         /* BURGER */
     #burger{
         position: absolute;
         color: white;
-        padding: 1em;
-        z-index:1;
+        margin: 1em;
+        z-index: 2;
         right: 0;
+        cursor: pointer;
+    }
+
+        /* NAVBAR ALT */
+    header{
+        position: relative;
+    }
+    #main-nav{
+        background-color: #6aa821;
+        height: 130px;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        transform: translateY(-100%);
+        transition: 0.4s;
+        display:block;
+    }
+    #main-nav li{
+        text-align: center;
+        list-style: none;
+        margin: 1em 0;
+    }
+    #main-nav li a{
+        color: white;
+        /*display: block;*/
+        width: auto;
+        margin: 0;
+        opacity: 0;
+    }
+    #main-nav.isOpen{
+        transform: translateY(0%);
+    }
+    #main-nav.isOpen a{
+        opacity: 1;
     }
 }
 
 @media screen and (max-width: 510px) {
-    body div header figure div img{
+    body div header figure div img[class="imgbanner"]{
         width: auto;
         height: 300px;
         position:absolute;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 590px) {
     footer div[class="disp-flex"]{
         display: block;
     }
@@ -303,13 +388,33 @@ footer div section nav a img{
         padding: 0em 1em 1em;
         margin: 0em 0 1em;
     }
-}
-
-@media screen and (max-width: 452px) {
-    .disp-block{
+    footer input[type="text"], footer input[type="email"]{
+        width: 100%;
+    }
+    h3{
+        text-align: center;
+    }
+    nav[class="disp-flex help"]{
         display: block;
     }
+    nav[class="disp-flex help"] a{
+        width: 100%;
+        margin: 0.25em;
+        overflow: hidden;
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+    .footer-img{
+        width: 100%;
+        height: auto;
+    }
+    nav[class="disp-flex help2"]{
+        justify-content: center;
+    }
 }
+
+
 /*--------------------------------------------------------*/
 
 /*----------------- NIGHT MODE ---------------------------*/
